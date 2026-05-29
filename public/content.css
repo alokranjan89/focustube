@@ -1,0 +1,14 @@
+.focustube-hidden {
+  display: none !important;
+}
+
+#focustube-home-replacement {
+  display: none !important;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+#focustube-home-replacement *,
+.focustube-channel-block-button {
+  box-sizing: border-box;
+}
