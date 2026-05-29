@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import '../styles/global.css'
-import { PopupApp } from './PopupApp'
+import { PopupApp } from '../popup/PopupApp'
 
 const rootElement = document.getElementById('root')
 if (rootElement) {

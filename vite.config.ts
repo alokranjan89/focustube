@@ -10,7 +10,7 @@ function contentScriptBundle(): Plugin {
     apply: 'build',
     async closeBundle() {
       await esbuild({
-        entryPoints: [resolve(__dirname, 'src/content.ts')],
+        entryPoints: [resolve(__dirname, 'src/entrypoints/content.ts')],
         outfile: resolve(__dirname, 'dist/content.js'),
         bundle: true,
         format: 'iife',
@@ -32,7 +32,7 @@ export default defineConfig({
       input: {
         popup: resolve(__dirname, 'popup.html'),
         options: resolve(__dirname, 'options.html'),
-        background: resolve(__dirname, 'src/background.ts')
+        background: resolve(__dirname, 'src/entrypoints/background.ts')
       },
       output: {
         entryFileNames: '[name].js',

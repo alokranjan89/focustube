@@ -1,8 +1,6 @@
-import { getStorageState, saveAnalytics, saveSettings } from './services/chromeStorage'
-import { recordBlockEvent } from './services/analytics'
-import { handleRuntimeMessage } from './services/messageHandler'
-import type { StorageState } from './types'
-import type { RuntimeMessage } from './services/runtimeMessaging'
+import { getStorageState, saveAnalytics, saveSettings } from '../services/chromeStorage'
+import { handleRuntimeMessage } from '../services/messageHandler'
+import type { RuntimeMessage } from '../services/runtimeMessaging'
 
 const messageHandlerDependencies = {
   getStorageState,

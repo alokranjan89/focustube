@@ -1,12 +1,12 @@
 ﻿# FocusTube
 
-A premium Chrome extension for blocking distracting YouTube videos and turning your playback experience into a focus-first dashboard.
+A Chrome extension for blocking distracting YouTube videos when FocusTube is turned on.
 
 ---
 
 ## Overview
 
-FocusTube is designed to help engineers, students, and knowledge workers stay productive on YouTube by blocking distractions and surfacing meaningful focus metrics. The extension now provides a modern dashboard experience instead of a basic settings page.
+FocusTube is designed to help engineers, students, and knowledge workers stay productive on YouTube by blocking distractions only when the extension is enabled. When FocusTube is off, YouTube remains unchanged.
 
 ---
 
@@ -77,28 +77,32 @@ npm run build
 ```text
 public/                  ← Static extension assets and manifest
   ├── manifest.json
-  ├── popup.html
-  ├── options.html
+  ├── content.css
   └── icons/
 src/                     ← Source code
-  ├── background.ts
-  ├── content.ts
+  ├── entrypoints/       ← Chrome/Vite runtime entrypoints
+  │   ├── background.ts
+  │   ├── content.ts
+  │   ├── options.tsx
+  │   └── popup.tsx
   ├── components/
   │   ├── dashboard/
   │   ├── Button.tsx
   │   ├── Card.tsx
   │   └── ...
+  ├── content/           ← YouTube page scanning and blocking
   ├── hooks/
   ├── popup/
   ├── options/
   ├── services/
   ├── styles/
   └── types/
+docs/                    ← Product and verification documentation
+  ├── FEATURE_GUIDE.md
+  ├── QUICK_START.md
+  └── VERIFICATION.md
 package.json
 README.md
-QUICK_START.md
-FEATURE_GUIDE.md
-VERIFICATION.md
 ```
 
 ---
@@ -142,7 +146,7 @@ The production build generates extension assets in `dist/`. Use that folder when
 
 - `manifest.json` targets YouTube with `host_permissions`
 - `storage` permission is used for settings persistence
-- The UI is intentionally made more actionable and less like a settings form
+- The extension is intentionally controlled by one master on/off switch
 
 ---
 
